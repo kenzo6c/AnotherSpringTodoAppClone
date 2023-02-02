@@ -19,6 +19,7 @@ public class TodoController {
     @GetMapping("/")
     public ModelAndView index() {
         ModelAndView modelAndView = new ModelAndView("index");
+        modelAndView.addObject("todoItems", todoItemService.getAll());
         return modelAndView;
     }
 }
