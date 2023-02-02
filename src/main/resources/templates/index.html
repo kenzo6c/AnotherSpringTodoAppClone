@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}">
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap-icons/1.10.3/font/bootstrap-icons.css}">
     <title>Title</title>
 </head>
 <body>
@@ -15,20 +16,27 @@
                 <th>Id</th>
                 <th>Content</th>
                 <th>Date</th>
-                <th>Is WIP</th>
+<!--                <th>Is WIP</th>-->
                 <th>Is Done</th>
             </tr>
             </thead>
             <tbody>
                 <tr th:each="item : ${todoItems}" th:class="${item.isDone} ? 'alert alert-success' : 'alert alert-warning'">
-                    <td></td>
-                    <td th:text="${item.id}"></td>
-                    <td th:text="${item.content}"></td>
-                    <td th:text="${item.creationDate}"></td>
                     <td>
-                        <span th:if="${item.isWIP} == true" th:text="Yes" />
-                        <span th:unless="${item.isWIP} == true" th:text="No" />
+                        <div class="btn btn-group-sm" role="group">
+<!--                            <a class="btn btn-warning" th:href="@{/edit/{id}(id=${item.id})}">Edit</a>-->
+                            <a th:class="${item.isDone} ? 'btn btn-warning' : 'btn btn-success'" th:href="@{/check/{id}(id=${item.id})}"><i th:class="${item.isDone} ? 'bi bi-dash-circle' : 'bi bi-check-circle'"></i></a>
+                            <a class="btn btn-danger" th:href="@{/delete/{id}(id=${item.id})}"><i class="bi bi-trash3"></i></a>
+                        </div>
                     </td>
+                    <td th:text="${item.id}"></td>
+                    <td th:unless="${edit} == true" th:text="${item.content}"></td>
+<!--                    <td th:if="${edit} == true" th:text="Test"></td>-->
+                    <td th:text="${item.creationDate}"></td>
+<!--                    <td>-->
+<!--                        <span th:if="${item.isWIP} == true" th:text="Yes" />-->
+<!--                        <span th:unless="${item.isWIP} == true" th:text="No" />-->
+<!--                    </td>-->
                     <td>
                         <span th:if="${item.isDone} == true" th:text="Yes" />
                         <span th:unless="${item.isDone} == true" th:text="No" />
