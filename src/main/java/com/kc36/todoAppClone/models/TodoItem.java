@@ -15,7 +15,15 @@ import java.time.Instant;
 @Setter
 @Entity
 @Table(name = "todo_items")
-public class TodoItem implements Serializable {
+public class TodoItem {
+
+    public TodoItem() {
+        this.id = null;
+        this.content = "";
+        this.creationDate = null;
+        this.isWIP = false;
+        this.isDone = false;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

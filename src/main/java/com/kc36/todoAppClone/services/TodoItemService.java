@@ -25,7 +25,7 @@ public class TodoItemService {
         return todoItemRepository.findAll();
     }
 
-    public TodoItem add(TodoItem todoItem)
+    public TodoItem save(TodoItem todoItem)
     {
         if (todoItem.getId() == null)
         {
