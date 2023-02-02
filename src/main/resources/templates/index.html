@@ -51,6 +51,10 @@
                 <input class="form-control" type="text" th:field="*{content}" id="content" placeholder="New item content">
             </div>
         </form>
+
+        <div>
+            <a class="btn btn-danger mt-3" th:href="@{/deleteall}">Delete All</a>
+        </div>
     </div>
 
     <script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.min.js}"></script>

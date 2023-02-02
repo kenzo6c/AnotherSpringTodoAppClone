@@ -46,6 +46,13 @@ public class TodoController {
         return "redirect:/";
     }
 
+    @GetMapping("/deleteall")
+    public String deleteAllTodoItem()
+    {
+        todoItemService.deleteAll();
+        return "redirect:/";
+    }
+
 //    @GetMapping("/edit/{id}")
 //    public String showEditForm(@PathVariable Long id, Model model)
 //    {
