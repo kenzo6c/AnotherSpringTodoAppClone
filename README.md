@@ -4,9 +4,9 @@ This is a simple todo app clone which I made to learn more about Spring Boot and
 
 It was done in 5 days: I spent 2 days digging the Spring Framework and Spring MVC theory, then I spent 3 days building this app while also making sure to understand how everything worked.
 
-This project is based on this tutorial: https://www.youtube.com/watch?v=yqWtYKWWcpY, and I also used Marco Behler's guides on Spring Framework and Spring MVC. However, many things were changed in the code and in the functions available so that I could discover new things.
+This project is based on this tutorial: https://www.youtube.com/watch?v=yqWtYKWWcpY, and I also used Marco Behler's guides on Spring Framework and Spring MVC. However, many things were changed in the code and in the functions available so that I could discover new features.
 
-Here are a few lists of the differences:
+Here is a small list of the differences:
 - I used String + Model instead of ModelAndView to redirect to other pages.
 - Everything is on the same page.
 - Missing functionalities (edit), added new ones (check button and delete all button).
